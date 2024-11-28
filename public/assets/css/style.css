@@ -1,0 +1,20 @@
+.home-content-wrapper {
+    margin-top: 25%;
+    max-width: 642px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.board-btn {
+    border-radius: 50px;
+}
+.board-btn a {
+    color : #fff;
+    text-decoration : none;
+}
+.login-form {
+    max-width: 670px;
+    margin: 10% auto;
+}
+.login-btn {
+    margin-top: 15px;
+}

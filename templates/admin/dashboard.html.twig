@@ -1,0 +1,56 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block content %}
+    <link rel="stylesheet" href="/assets/css/adminStyle.css">
+    <div class="stat-perform">
+        <h1 style="color : #64748b;">Indicateurs de performance</h1>
+        <div class="stat-container">
+            <div class="stat-element">
+                <h4>Nombre total de tâches par statut</h4>
+                <ul>
+                    {% for status in tasksByStatus %}
+                        <li>{{ status.status|capitalize }} : {{ status.count }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="stat-element">
+                <h4>Tâches en retard</h4>
+                <ul>
+                    {% for task in overdueTasks %}
+                        <li>{{ task.title }} - Date de fin : {{ task.dateFin|date('d/m/Y') }}</li>
+                    {% else %}
+                        <li>Aucune tâche en retard</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="stat-element">
+            <h4>Statistiques par utilisateur</h4>
+            <table style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th>Utilisateur</th>
+                        <th>Tâches en cours</th>
+                        <th>Tâches terminées</th>
+                        <th>Tâches en retard</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for stat in userStatistics %}
+                        <tr>
+                            <td>{{ stat.firstname }}</td>
+                            <td>{{ stat.inProgress }}</td>
+                            <td>{{ stat.completed }}</td>
+                            <td>{{ stat.overdue }}</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="4">Aucune donnée</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+{% endblock %}

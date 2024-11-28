@@ -1,0 +1,27 @@
+ul {
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+td {
+    padding: 5px;
+}
+.stat-perform h1{
+    text-transform: uppercase;
+    text-align: center;
+    color: #94a3b8;
+}
+.stat-container {
+    display: flex;
+    margin: 35px 0;
+}
+h4 {
+    color: #5368d5;
+}
+.stat-container > div {
+    width: 50%;
+}
+.stat-element {
+    text-align: center;
+}

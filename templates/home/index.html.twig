@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="home-content-wrapper text-center">
+        <h2>Bienvenue sur votre outil collaboratif de gestion de tâches ! ✅</h2>
+        <p>
+            Suivez vos projets, gérez vos tâches en équipe, et obtenez une vue claire de vos progrès.
+            👉 Connectez-vous dès maintenant en cliquant sur le bouton ci-dessous pour accéder à votre tableau de bord.
+        </p>
+        <div class="board-btn btn btn-success">
+            <a href="{{ path('app_login')}}">Acccéder au tableau de bord</a>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
